@@ -1,0 +1,143 @@
+.container { position: relative; min-height: 100dvh; }
+.loadingWrap { min-height: 100dvh; display: flex; align-items: center; justify-content: center; }
+/* Back Button */
+.backBtn {
+  position: fixed; top: max(8px, env(safe-area-inset-top, 8px)); left: 8px; z-index: 9999;
+  width: 44px; height: 44px; border: none; background: transparent; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  filter: drop-shadow(0 0 3px rgba(255,255,255,0.9)) drop-shadow(0 0 1px rgba(255,255,255,1));
+  touch-action: manipulation; -webkit-tap-highlight-color: transparent;
+}
+.backBtnStatic {
+  position: absolute; top: 12px; left: 8px; z-index: 9999;
+  width: 44px; height: 44px; border: none; background: transparent; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  touch-action: manipulation; -webkit-tap-highlight-color: transparent;
+}
+/* Screen */
+.screen { display: flex; flex-direction: column; min-height: 100dvh; }
+/* Banner */
+.banner { position: relative; width: 100%; aspect-ratio: 1500 / 840; overflow: hidden; }
+.bannerImg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+/* Content */
+.content { flex: 1; padding: 24px 24px 32px; display: flex; flex-direction: column; }
+/* Question */
+.questionLabel { font-size: 14px; color: #b5b5b5; margin-bottom: 8px; }
+.questionHeader { display: flex; flex-direction: column; align-items: flex-start; gap: 10px; margin-bottom: 4px; }
+.questionMain { font-size: clamp(15px, 4.5vw, 20px); font-weight: 700; margin-bottom: 6px; line-height: 1.4; word-break: keep-all; }
+.questionSub { font-size: clamp(15px, 4.5vw, 20px); font-weight: 700; line-height: 1.4; word-break: keep-all; }
+.questionMainBig { font-size: clamp(18px, 5.5vw, 22px); font-weight: 700; margin-bottom: 6px; line-height: 1.4; word-break: keep-all; }
+.questionSubBig { font-size: clamp(18px, 5.5vw, 22px); font-weight: 700; line-height: 1.4; word-break: keep-all; }
+/* Brand Logo */
+.brandLogo {
+  width: 44px; height: 44px; border-radius: 50%; background: #fff;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; overflow: hidden;
+}
+.logoImg { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
+/* Slots */
+.slotsRow { display: flex; align-items: center; gap: 8px; margin-bottom: 32px; margin-top: 20px; }
+.slot {
+  width: 48px; height: 48px; border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 22px; font-weight: 800; color: #999;
+  background: #222222; border: 2px solid #ffcc00;
+  transition: all 0.4s ease;
+}
+.slotRevealed {
+  background: #ffcc00; color: #322f1b; border-color: #ffcc00;
+  animation: slotRevealAnim 0.5s ease-out forwards;
+}
+@keyframes slotRevealAnim {
+  0% { transform: rotateX(90deg); opacity: 0; }
+  100% { transform: rotateX(0deg); opacity: 1; }
+}
+.slotSuffix { font-size: 20px; font-weight: 700; margin-left: 4px; }
+/* Coupon */
+.couponImg { width: 70%; border-radius: 12px; margin: 0 auto 10px; display: block; }
+.couponMini { width: 70%; border-radius: 10px; margin: 0 auto 10px; }
+.couponNotice { font-size: 14px; color: #b5b5b5; text-align: center; margin-bottom: 16px; }
+/* Buttons */
+.btnRow { display: flex; gap: 12px; margin-top: auto; padding-top: 16px; }
+.btnHint {
+  flex: 1; padding: 16px; border-radius: 12px; font-size: 15px; font-weight: 600;
+  background: transparent; color: #ffcc00; border: 1px solid #ffcc00;
+  cursor: pointer; font-family: inherit; transition: all 0.2s;
+}
+.btnHint:active { background: rgba(255,204,0,0.1); }
+.btnAnswer {
+  flex: 1; padding: 16px; border-radius: 12px; font-size: 15px; font-weight: 600;
+  background: #ffcc00; color: #322f1b; border: none;
+  cursor: pointer; font-family: inherit; transition: all 0.2s;
+  box-shadow: 0 0 20px rgba(255,204,0,0.2);
+}
+.btnAnswer:active { background: #e6b800; }
+/* CTA Button */
+.ctaBtn {
+  width: 100%; padding: 16px; border-radius: 12px;
+  font-size: 16px; font-weight: 700;
+  background: #ffcc00; color: #322f1b; border: none;
+  cursor: pointer; font-family: inherit; transition: all 0.2s;
+  text-align: center; text-decoration: none; display: block;
+}
+.ctaBtn:active { background: #e6b800; transform: scale(0.98); }
+.ctaBtnGray {
+  width: 100%; padding: 16px; border-radius: 12px;
+  font-size: 16px; font-weight: 700; margin-top: 10px;
+  background: #3d3d3d; color: #f9f9f9; border: none;
+  cursor: pointer; font-family: inherit; transition: all 0.2s;
+  text-align: center; text-decoration: none; display: block;
+}
+.ctaBtnGray:active { background: #4d4d4d; transform: scale(0.98); }
+/* Product Prompt */
+.productPrompt { font-size: 14px; color: #b5b5b5; text-align: center; margin-bottom: 16px; }
+.productHighlight { color: #ffcc00; font-weight: 600; }
+.productPromptSmall { font-size: 14px; color: #b5b5b5; }
+/* Answer Input */
+.answerLabel { font-size: 20px; font-weight: 700; margin-bottom: 20px; }
+.textInput {
+  width: 100%; padding: 16px; border-radius: 12px;
+  background: #3d3d3d; border: 2px solid #5d5d5d;
+  color: #f9f9f9; font-size: 24px; font-weight: 700;
+  font-family: inherit; letter-spacing: 2px; text-align: center;
+  outline: none; transition: border-color 0.2s;
+}
+.textInput:focus { border-color: #ffcc00; }
+.textInput::placeholder { color: #5d5d5d; font-weight: 400; font-size: 16px; }
+.inputCount { font-size: 13px; color: #b5b5b5; text-align: right; margin-top: 8px; margin-bottom: 24px; }
+.submitBtn {
+  width: 100%; padding: 16px; border-radius: 12px;
+  font-size: 18px; font-weight: 700; border: none;
+  cursor: pointer; font-family: inherit; transition: all 0.2s;
+}
+/* Result */
+.resultMessage { text-align: center; margin: 16px 0; animation: fadeInUp 0.6s ease-out; }
+.resultTitle { font-size: 18px; font-weight: 700; color: #ffcc00; }
+.resultSub { font-size: 14px; color: #b5b5b5; margin-top: 4px; }
+/* Wrong */
+.wrongContent { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 24px; }
+.wrongTitle { font-size: 28px; font-weight: 800; color: #fa4f57; margin-bottom: 8px; }
+.wrongSub { font-size: 15px; color: #b5b5b5; }
+/* Already Participated */
+.alreadyBadge { display: flex; align-items: center; gap: 8px; margin-bottom: 12px; }
+.checkCircle {
+  width: 20px; height: 20px; border-radius: 50%;
+  background: rgba(255,204,0,0.2); display: flex; align-items: center; justify-content: center;
+}
+.alreadyText { font-size: 14px; color: #ffcc00; font-weight: 600; }
+/* Hint Modal */
+.hintOverlay {
+  position: fixed; inset: 0; z-index: 50; background: rgba(0,0,0,0.8);
+  display: flex; align-items: center; justify-content: center; padding: 24px;
+}
+.hintBox {
+  background: #222222; border-radius: 20px; padding: 32px;
+  max-width: 320px; width: 100%; text-align: center; border: 1px solid #3d3d3d;
+}
+.hintDots { display: flex; justify-content: center; gap: 8px; margin-bottom: 20px; }
+.hintDot {
+  width: 10px; height: 10px; background: #ffcc00; border-radius: 50%;
+  animation: bounce 1.4s infinite ease-in-out both;
+}
+.hintText { font-size: 16px; font-weight: 600; white-space: pre-line; line-height: 1.6; margin-bottom: 20px; }
+.hintRedirect { font-size: 14px; color: #b5b5b5; animation: pulse 1.5s infinite; }
