@@ -1,5 +1,5 @@
 import { redirect } from "next/navigation";
 
 export default function Home() {
-  redirect("/campaign/qanda-tutoring");
+  redirect("/campaign/hwanta");
 }
